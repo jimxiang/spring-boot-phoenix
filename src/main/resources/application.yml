@@ -1,0 +1,41 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  server:
+    port:
+info:
+  app: @project.name@
+  description: @project.description@
+  version: @project.version@
+  encoding: @project.build.sourceEncoding@
+  java:
+    version: @java.version@
+spring:
+  security:
+    user:
+      name:
+      password:
+      roles:  
+  jackson:
+    default-property-inclusion: non_null
+  profiles:
+    active: @package.environment@
+
+server:
+  port:
+  compression:
+    enabled: true
+    mime-types: application/json,text/html,text/xml,text/plain,text/css,text/javascript,application/javascript
+    min-response-size: 2048
+
+logging:
+  level:
+    root: info
+  com:
+    service:
+      phoenix: info
